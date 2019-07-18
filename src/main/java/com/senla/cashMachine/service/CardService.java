@@ -1,23 +1,25 @@
 package com.senla.cashMachine.service;
 
 import com.senla.cashMachine.entity.Card;
-import com.senla.cashMachine.entity.CardMachine;
+import com.senla.cashMachine.entity.CashMachine;
 import com.senla.cashMachine.entity.CardStatus;
 import com.senla.cashMachine.exception.WithdrawException;
-import com.senla.cashMachine.util.Coder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CardService {
-    private static Logger log = LogManager.getLogger(Coder.class.getName());
+import java.time.LocalDate;
 
-    public double showBalance(Card card){
+public class CardService {
+    private static Logger log = LogManager.getLogger(CardService.class.getName());
+
+    public int showBalance(Card card){
         return card.getBalance();
     }
 
     public void blockCard(Card card){
         log.info("Card : "+card.getCarNumber()+"was blocked");
         card.setCardStatus(CardStatus.BLOCKED);
+        card.setLastBlockDate(LocalDate.now());
     }
 
     public void unblockCard(Card card){
@@ -25,28 +27,28 @@ public class CardService {
         card.setCardStatus(CardStatus.ACTIVE);
     }
 
-    public boolean deposit(CardMachine cardMachine, int deposit){
+    public boolean deposit(CashMachine cashMachine, int deposit){
         if(deposit>0 && deposit<1000000){
-            cardMachine.getCurrentCard().depositMoney(deposit);
-            cardMachine.depositMoney(deposit);
-            log.info(deposit+" money was added to card :"+ cardMachine.getCurrentCard().getCarNumber());
+            cashMachine.getCurrentCard().depositMoney(deposit);
+            cashMachine.depositMoney(deposit);
+            log.info(deposit+" money was added to card :"+ cashMachine.getCurrentCard().getCarNumber());
             return true;
         }
         return false;
     }
 
-    public boolean withdraw(CardMachine cardMachine,int withdraw)throws WithdrawException {
-        if(withdraw>0 && withdraw<=cardMachine.getBalance() && withdraw<=cardMachine.getCurrentCard().getBalance()){
-            cardMachine.withdrawMoney(withdraw);
-            cardMachine.getCurrentCard().withdrawMoney(withdraw);
-            log.info(withdraw+" money was withdrew from card :"+ cardMachine.getCurrentCard().getCarNumber());
+    public boolean withdraw(CashMachine cashMachine, int withdraw)throws WithdrawException {
+        if(withdraw>0 && withdraw<= cashMachine.getBalance() && withdraw<= cashMachine.getCurrentCard().getBalance()){
+            cashMachine.withdrawMoney(withdraw);
+            cashMachine.getCurrentCard().withdrawMoney(withdraw);
+            log.info(withdraw+" money was withdrew from card :"+ cashMachine.getCurrentCard().getCarNumber());
             return true;
         }
-        else if(withdraw>cardMachine.getBalance()){
+        else if(withdraw> cashMachine.getBalance()){
             log.info("No enough money in cash machine");
             throw new WithdrawException("No enough money in cash machine");
         }
-        else if(withdraw>cardMachine.getCurrentCard().getBalance()){
+        else if(withdraw> cashMachine.getCurrentCard().getBalance()){
             log.error("No enough money in yours balance");
             throw new WithdrawException("No enough money in yours balance");
         }

@@ -5,15 +5,15 @@ import java.time.LocalDate;
 public class Card {
 
     private int id;
-    private String carNumber;
+    private String cardNumber;
     private int balance;
     private String pinCode;
     private CardStatus cardStatus;
     private LocalDate lastBlockDate;
 
-    public Card(int id, String carNumber, int balance, String pinCode, CardStatus cardStatus, LocalDate lastBlockDate) {
+    public Card(int id, String cardNumber, int balance, String pinCode, CardStatus cardStatus, LocalDate lastBlockDate) {
         this.id = id;
-        this.carNumber = carNumber;
+        this.cardNumber = cardNumber;
         this.balance = balance;
         this.pinCode = pinCode;
         this.cardStatus = cardStatus;
@@ -21,11 +21,11 @@ public class Card {
     }
 
     public String getCarNumber() {
-        return carNumber;
+        return cardNumber;
     }
 
 
-    public double getBalance() {
+    public int getBalance() {
         return balance;
     }
 
@@ -63,5 +63,14 @@ public class Card {
 
     public void withdrawMoney(int money){
         this.balance-=money;
+    }
+
+    public boolean pinCodeEquals(String pinCode){
+        return (this.pinCode.equals(pinCode))? true:false;
+    }
+
+    @Override
+    public String toString() {
+        return id+" "+cardNumber+" "+balance+" "+pinCode+" "+cardStatus+" "+lastBlockDate;
     }
 }

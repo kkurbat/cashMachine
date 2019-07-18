@@ -21,7 +21,7 @@ public class DataParser {
     }
 
     private LocalDate getData(String date){
-        LocalDate localDate=LocalDate.MIN;
+        LocalDate localDate;
         try {
            localDate = LocalDate.parse(date);
         }

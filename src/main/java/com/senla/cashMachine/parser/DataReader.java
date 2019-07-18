@@ -1,6 +1,5 @@
 package com.senla.cashMachine.parser;
 
-import com.senla.cashMachine.entity.Card;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,14 +16,13 @@ public class DataReader {
 
         try {
             BufferedReader in = new BufferedReader(new FileReader(FILE_PATH));
-            String line =null;
+            String line;
             while ((line= in.readLine())!=null)
                 lines.add(line);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-
         return  lines;
     }
 
