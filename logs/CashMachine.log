@@ -76,3 +76,8 @@
 2019-07-20 17:58:55.998 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked
 2019-07-20 18:00:15.873 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000was unblocked
 2019-07-20 18:00:15.875 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked
+2019-07-20 20:11:31.912 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 20:11:31.918 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000was unblocked
+2019-07-20 20:11:31.918 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked
+2019-07-20 20:11:31.918 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
+2019-07-20 20:11:31.919 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
