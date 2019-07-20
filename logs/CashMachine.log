@@ -3,3 +3,58 @@
 2019-07-18 20:06:16.531 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
 2019-07-18 20:10:26.983 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
 2019-07-18 20:14:01.784 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:27:49.732 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:29:17.384 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:30:18.708 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:31:41.716 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:31:56.160 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:38:02.681 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:38:22.040 [main] INFO  com.senla.cashMachine.service.CardService - 100 money was added to card :1111-1111-1111-1111
+2019-07-20 14:39:38.576 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:41:16.442 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:41:55.290 [main] INFO  com.senla.cashMachine.service.CardService - 100 money was added to card :1111-1111-1111-1111
+2019-07-20 14:45:26.226 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:45:47.285 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :1111-1111-1111-1111
+2019-07-20 14:47:10.852 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:47:34.756 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :1111-1111-1111-1111
+2019-07-20 14:53:30.051 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 14:53:38.466 [main] INFO  com.senla.cashMachine.service.CardService - Card : 1111-1111-1111-1111was blocked
+2019-07-20 15:10:37.859 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:10:51.930 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:13:05.542 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:15:23.722 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:17:17.173 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:17:47.456 [main] INFO  com.senla.cashMachine.service.CardService - No enough money in cash machine
+2019-07-20 15:18:01.304 [main] INFO  com.senla.cashMachine.service.CardService - 30000 money was added to card :2377-4534-6323-6434
+2019-07-20 15:19:50.855 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:21:40.219 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:22:12.581 [main] ERROR com.senla.cashMachine.service.CardService - No enough money in yours balance
+2019-07-20 15:22:38.680 [main] INFO  com.senla.cashMachine.service.CardService - 100 money was withdrew from card :1111-1111-1111-1111
+2019-07-20 15:26:09.398 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:27:25.113 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:28:15.790 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:28:26.087 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:41:21.082 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:41:35.032 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:42:06.989 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:42:55.926 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:43:20.114 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:43:55.723 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:44:06.750 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:44:20.088 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:53:21.998 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 15:53:55.127 [main] INFO  com.senla.cashMachine.service.CardService - 14000 money was withdrew from card :1111-1111-1111-1111
+2019-07-20 16:16:57.328 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 16:17:18.797 [main] INFO  com.senla.cashMachine.service.CardService - 150000 money was added to card :1111-1111-1111-1111
+2019-07-20 16:17:27.052 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped
+2019-07-20 16:17:41.677 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 16:18:20.148 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 16:20:10.791 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 16:20:18.832 [main] INFO  com.senla.cashMachine.service.CardService - Card : 2377-4534-6323-6434was blocked
+2019-07-20 16:20:30.383 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped
+2019-07-20 17:06:56.928 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 17:07:06.139 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped
+2019-07-20 17:19:20.699 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-20 17:20:09.349 [main] ERROR com.senla.cashMachine.service.CardService - Deposit was failed,reason: invalid deposit input
+2019-07-20 17:20:24.431 [main] INFO  com.senla.cashMachine.service.CardService - 20000 money was withdrew from card :1111-1111-1111-1111
+2019-07-20 17:20:41.453 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class CardService {
     private static Logger log = LogManager.getLogger(CardService.class.getName());
 
-    public int showBalance(Card card){
+    public int getBalance(Card card){
         return card.getBalance();
     }
 
@@ -22,7 +22,7 @@ public class CardService {
         card.setLastBlockDate(LocalDate.now());
     }
 
-    public void unblockCard(Card card){
+    private void unblockCard(Card card){
         log.info("Card : "+card.getCarNumber()+"was unblocked");
         card.setCardStatus(CardStatus.ACTIVE);
     }
@@ -34,6 +34,7 @@ public class CardService {
             log.info(deposit+" money was added to card :"+ cashMachine.getCurrentCard().getCarNumber());
             return true;
         }
+        log.error("Deposit was failed,reason: invalid deposit input");
         return false;
     }
 
@@ -45,12 +46,21 @@ public class CardService {
             return true;
         }
         else if(withdraw> cashMachine.getBalance()){
-            log.info("No enough money in cash machine");
-            throw new WithdrawException("No enough money in cash machine");
+            log.error("Withdraw was failed,reason: not enough balance in cash machine");
+            throw new WithdrawException("Not enough money in cash machine");
         }
         else if(withdraw> cashMachine.getCurrentCard().getBalance()){
-            log.error("No enough money in yours balance");
-            throw new WithdrawException("No enough money in yours balance");
+            log.error("Withdraw was failed,reason: not enough balance in card "+cashMachine.getCurrentCard().getCarNumber());
+            throw new WithdrawException("Not enough money in yours balance");
+        }
+        return false;
+    }
+
+    public boolean tryToUnblockCard(CashMachine cashMachine){
+        if(cashMachine.getCurrentCard().getLastBlockDate().isBefore(LocalDate.now())){
+            unblockCard(cashMachine.getCurrentCard());
+            log.info("Card : "+cashMachine.getCurrentCard().getCarNumber()+" was unblocked");
+            return true;
         }
         return false;
     }

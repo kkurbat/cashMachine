@@ -22,43 +22,52 @@ public class Launcher {
         DataSaver saver=new DataSaver();
         CardNumberValidation cardNumberValidation=new CardNumberValidation();
         while(true) {
-            String cardNumber;
-            while (true) {///sigin
+            CashMachine cashMachine;
+
+            while (true) {                                  ///Card number input
                 consoleIO.printRequestforCardNumberOrExit();
                 String requestedCard = scanner.nextLine();
-                if (requestedCard.matches("0"))
+                if (requestedCard.matches("0")) {
+                    log.info("Cash machine was stopped");
                     return;
+                }
                 else if (cardNumberValidation.isCardNumberValide(requestedCard)) {
-                    cardNumber=new String(requestedCard);
+                    cashMachine=new CashMachine(requestedCard);
+                    if(cashMachine.isCardFake()) consoleIO.printCardIsFake();
+                    else if(cashMachine.getCurrentCard().isBlocked()) {
+                        if(!cashMachine.tryToUnblockCard())
+                            consoleIO.printBlockCard();
+                    }
                     break;
                 }
-                else
-                    consoleIO.printNotValidCardNUmber();
+                else consoleIO.printNotValidCardNUmber();
             }
 
-            CashMachine cashMachine=new CashMachine(cardNumber);//pin input
             boolean authorized=false;
-            do{
-                MD5Encrypter md5=new MD5Encrypter();
-                consoleIO.printRequestForPIN();
-                String requestedPin=scanner.nextLine();
-                try {
-                    if (cashMachine.getCurrentCard().pinCodeEquals(md5.encrypt(requestedPin)))
-                        authorized = true;
-                    else {
-                        cashMachine.attemptIncrease();
-                        if(cashMachine.getAttempts()>cashMachine.getMAX_ATTEMPTS()) {
-                            consoleIO.printBlockCard();
-                            cashMachine.blockCard();
-                            break;
+            if(!(cashMachine.isCardFake() || cashMachine.getCurrentCard().isBlocked())) {
+                do {                                       ///PIN input
+                    MD5Encrypter md5 = new MD5Encrypter();
+                    consoleIO.printRequestForPIN();
+                    String requestedPin = scanner.nextLine();
+                    try {
+                        if (cashMachine.getCurrentCard().pinCodeEquals(md5.encrypt(requestedPin)))
+                            authorized = true;
+                        else {
+                            cashMachine.attemptIncrease();
+                            consoleIO.printPINIsIncorrect(3 - cashMachine.getAttempts());
+                            if (cashMachine.getAttempts() == cashMachine.getMAX_ATTEMPTS()) {
+                                consoleIO.printBlockCard();
+                                cashMachine.blockCard();
+                                saver.save(cashMachine);
+                                break;
+                            }
                         }
-                    }
+                    } catch (NoSuchAlgorithmException ex) { }
                 }
-                catch (NoSuchAlgorithmException ex){ }
+                while (!authorized);
             }
-            while (!authorized);
 
-            while(true && authorized){//menu
+            while(true && authorized){                      ///Menu
                 consoleIO.printMenu();
                 int request=consoleIO.integerInput();
                 switch(request){
@@ -67,13 +76,13 @@ public class Launcher {
                         break;
                     }
                     case 1:{
-                        consoleIO.printBalance(cashMachine.getCurrentCard().getBalance());
+                        consoleIO.printBalance(cashMachine.getCardBalance());
                         break;
                     }
                     case 2:{
                         int money=consoleIO.requestForDeposit();
                         if(cashMachine.deposit2Card(money)) {
-                            consoleIO.printSucces();
+                            consoleIO.printSuccess();
                             break;
                         }
                         else {
@@ -81,12 +90,11 @@ public class Launcher {
                             break;
                         }
                     }
-
                     case 3:{
                         int money=consoleIO.requestForWithdraw();
                         try{
                             if(cashMachine.withdrawFromCard(money)){
-                                consoleIO.printSucces();
+                                consoleIO.printSuccess();
                                 break;
                             }
                         }
@@ -100,10 +108,8 @@ public class Launcher {
                         break;
                     }
                 }
-
-
+                saver.save(cashMachine);
             }
-            saver.save(cashMachine.getCurrentCard());
 
         }
 

@@ -11,6 +11,7 @@ import java.util.List;
 public class DataParser {
 
     public List<Card> parseData(List<String> lines){
+        lines.remove(0);
         List<Card> cards=new ArrayList<Card>();
         for(String line: lines){
             String[] data=line.split(" ");
@@ -30,6 +31,10 @@ public class DataParser {
         }
         return localDate;
 
+    }
+
+    public int getCashMachineBalance(String line){
+        return Integer.parseInt(line);
     }
 
 

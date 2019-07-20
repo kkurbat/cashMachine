@@ -69,6 +69,10 @@ public class Card {
         return (this.pinCode.equals(pinCode))? true:false;
     }
 
+    public boolean isBlocked(){
+         return (cardStatus==CardStatus.ACTIVE)? false:true;
+    }
+
     @Override
     public String toString() {
         return id+" "+cardNumber+" "+balance+" "+pinCode+" "+cardStatus+" "+lastBlockDate;

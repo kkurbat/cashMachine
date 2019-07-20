@@ -8,11 +8,15 @@ import java.util.List;
 
 public class CardDao {
     private List<Card> cards;
+    private int cashMachineBalance;
 
     public CardDao(){
         DataReader dataReader=new DataReader();
         DataParser dataParser=new DataParser();
-        cards=dataParser.parseData(dataReader.readData());
+        List<String> lines=dataReader.readData();
+        cashMachineBalance=dataParser.getCashMachineBalance(lines.get(0));
+        cards=dataParser.parseData(lines);
+
     }
 
     public Card getCardByCardNumber(String cardNumber){
@@ -21,5 +25,9 @@ public class CardDao {
                 return card;
         }
         return null;
+    }
+
+    public int getCashMachineBalance(){
+        return cashMachineBalance;
     }
 }

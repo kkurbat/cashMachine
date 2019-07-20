@@ -6,7 +6,7 @@ import com.senla.cashMachine.service.CardService;
 
 //Controller class
 public class CashMachine {
-    private int balance=100000;
+    private int balance;
     private final int MAX_ATTEMPTS=3;
     private Card currentCard;
     private int attempts=0;
@@ -15,6 +15,7 @@ public class CashMachine {
 
     public CashMachine(String cardNumber) {
         this.currentCard = cardDao.getCardByCardNumber(cardNumber);
+        this.balance=cardDao.getCashMachineBalance();
     }
 
     public int getMAX_ATTEMPTS() {
@@ -25,16 +26,8 @@ public class CashMachine {
         return currentCard;
     }
 
-    public void setCurrentCard(Card currentCard) {
-        this.currentCard = currentCard;
-    }
-
     public int getAttempts() {
         return attempts;
-    }
-
-    public void setAttempts(int attempts) {
-        this.attempts = attempts;
     }
 
     public int getBalance() {
@@ -49,17 +42,15 @@ public class CashMachine {
         this.balance-=money;
     }
 
-    public int showCardBalance(){
-        return cardService.showBalance(currentCard);
-    }
-
     public void blockCard(){
         cardService.blockCard(currentCard);
     }
 
-    public void unblockCard(){
-        cardService.unblockCard(currentCard);
+    public boolean tryToUnblockCard(){
+        return cardService.tryToUnblockCard(this);
     }
+
+    public int getCardBalance(){ return cardService.getBalance(currentCard); }
 
     public boolean deposit2Card(int deposit){
         return cardService.deposit(this,deposit);
@@ -73,4 +64,7 @@ public class CashMachine {
         attempts++;
     }
 
+    public boolean isCardFake(){
+        return (currentCard==null)?true:false;
+    }
 }

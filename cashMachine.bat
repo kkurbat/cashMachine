@@ -1,0 +1,1 @@
+java -jar out/artifacts/senla_jar/senla.jar

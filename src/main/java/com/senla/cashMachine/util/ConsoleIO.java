@@ -14,17 +14,16 @@ public class ConsoleIO {
     }
 
     public void printNotValidCardNUmber(){
-        System.out.println("Your's card number is not valid,card number,card number must match the format XXXX-XXXX-XXXX-XXXX");
+        System.out.println("Your's card number is not valid,card number must match the format XXXX-XXXX-XXXX-XXXX");
     }
 
-    public void printCardNumberDontExist(){
+    public void printCardIsFake(){
         System.out.println("This card number don't exist,try another one");
     }
 
     public void printPINIsIncorrect(int atempts){
         System.out.println("PIN IS INCORRECT");
         System.out.println(atempts+" are(is) left to input PIN,or your's card will be blocked ");
-        printRequestForPIN();
     }
 
     public void printMenu(){
@@ -54,7 +53,7 @@ public class ConsoleIO {
         System.out.println("Try another card..");
     }
 
-    public void printSucces(){
+    public void printSuccess(){
         System.out.println("Operation was ended successfully");
     }
 

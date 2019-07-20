@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: log4j-api-2.11.0.jar bsh-2.0b6.jar testng-6.14.3.jar jcomm
+ ander-1.72.jar log4j-core-2.11.0.jar
+Main-Class: com.senla.cashMachine.Launcher
+
