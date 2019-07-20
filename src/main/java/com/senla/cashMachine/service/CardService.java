@@ -45,14 +45,15 @@ public class CardService {
             log.info(withdraw+" money was withdrew from card :"+ cashMachine.getCurrentCard().getCarNumber());
             return true;
         }
-        else if(withdraw> cashMachine.getBalance()){
-            log.error("Withdraw was failed,reason: not enough balance in cash machine");
-            throw new WithdrawException("Not enough money in cash machine");
-        }
         else if(withdraw> cashMachine.getCurrentCard().getBalance()){
             log.error("Withdraw was failed,reason: not enough balance in card "+cashMachine.getCurrentCard().getCarNumber());
             throw new WithdrawException("Not enough money in yours balance");
         }
+        else if(withdraw> cashMachine.getBalance()){
+            log.error("Withdraw was failed,reason: not enough balance in cash machine");
+            throw new WithdrawException("Not enough money in cash machine");
+        }
+
         return false;
     }
 

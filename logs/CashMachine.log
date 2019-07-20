@@ -58,3 +58,21 @@
 2019-07-20 17:20:09.349 [main] ERROR com.senla.cashMachine.service.CardService - Deposit was failed,reason: invalid deposit input
 2019-07-20 17:20:24.431 [main] INFO  com.senla.cashMachine.service.CardService - 20000 money was withdrew from card :1111-1111-1111-1111
 2019-07-20 17:20:41.453 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped
+2019-07-20 17:50:12.680 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
+2019-07-20 17:53:14.134 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-20 17:53:58.455 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-20 17:56:02.445 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 17:56:37.547 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 17:56:37.555 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
+2019-07-20 17:56:37.556 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-20 17:56:40.105 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 17:56:40.112 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
+2019-07-20 17:56:40.113 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-20 17:56:47.128 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 17:57:47.720 [main] INFO  com.senla.cashMachine.service.CardService - 1000 money was added to card :0000-0000-0000-0000
+2019-07-20 17:57:47.723 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
+2019-07-20 17:57:47.724 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-20 17:58:55.996 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000was unblocked
+2019-07-20 17:58:55.998 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked
+2019-07-20 18:00:15.873 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000was unblocked
+2019-07-20 18:00:15.875 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked

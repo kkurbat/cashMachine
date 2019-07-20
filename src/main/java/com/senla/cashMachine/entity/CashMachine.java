@@ -18,6 +18,11 @@ public class CashMachine {
         this.balance=cardDao.getCashMachineBalance();
     }
 
+    public CashMachine(Card card,int balance){
+        this.currentCard=card;
+        this.balance=balance;
+    }
+
     public int getMAX_ATTEMPTS() {
         return MAX_ATTEMPTS;
     }
