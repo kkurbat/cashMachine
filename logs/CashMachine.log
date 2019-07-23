@@ -81,3 +81,7 @@
 2019-07-20 20:11:31.918 [main] INFO  com.senla.cashMachine.service.CardService - Card : 0000-0000-0000-0000 was unblocked
 2019-07-20 20:11:31.918 [main] INFO  com.senla.cashMachine.service.CardService - 7000 money was withdrew from card :0000-0000-0000-0000
 2019-07-20 20:11:31.919 [main] ERROR com.senla.cashMachine.service.CardService - Withdraw was failed,reason: not enough balance in card 0000-0000-0000-0000
+2019-07-23 21:22:37.508 [main] INFO  com.senla.cashMachine.Launcher - Cash machine is working
+2019-07-23 21:23:14.222 [main] INFO  com.senla.cashMachine.service.CardService - Card : 1645-5325-1251-6425was unblocked
+2019-07-23 21:23:14.222 [main] INFO  com.senla.cashMachine.service.CardService - Card : 1645-5325-1251-6425 was unblocked
+2019-07-23 21:23:34.865 [main] INFO  com.senla.cashMachine.Launcher - Cash machine was stopped
